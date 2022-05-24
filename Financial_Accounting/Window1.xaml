@@ -1,0 +1,86 @@
+﻿<Window x:Class="Financial_Accounting.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Financial_Accounting"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid x:Name="MainRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--<Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" MinWidth="600" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="800" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Привіт, користувач!" x:Name="textLabel" FontWeight="Bold" FontSize="20" />
+            </StackPanel>
+        </Border>-->
+
+        <Button Grid.Column="0" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignFlatAccentBgButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignFlatAccentButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignFlatButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignFlatDarkBgButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignFlatDarkButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="5" Width="100" Style="{StaticResource MaterialDesignFlatLightBgButton}">Button</Button>
+        <Button Grid.Column="0" Grid.Row="6" Width="100" Style="{StaticResource MaterialDesignFlatLightButton}">Button</Button>
+
+        <Button Grid.Column="1" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignFlatMidBgButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryDarkBgButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="5" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryLightButton}">Button</Button>
+        <Button Grid.Column="1" Grid.Row="6" Width="100" Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}">Button</Button>
+
+        <Button Grid.Column="2" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignFloatingActionAccentButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignFloatingActionButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignFloatingActionDarkButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignFloatingActionLightButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="5" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">Button</Button>
+        <Button Grid.Column="2" Grid.Row="6" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">Button</Button>
+
+        <Button Grid.Column="3" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryDarkButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryLightButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignIconButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="5" Width="100" Style="{StaticResource MaterialDesignIconForegroundButton}">Button</Button>
+        <Button Grid.Column="3" Grid.Row="6" Width="100" Style="{StaticResource MaterialDesignOutlinedButton}">Button</Button>
+
+        <Button Grid.Column="4" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignOutlinedDarkButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignOutlinedLightButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignPaperButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignPaperDarkButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="5" Width="100" Style="{StaticResource MaterialDesignPaperSecondaryDarkButton}">Button</Button>
+        <Button Grid.Column="4" Grid.Row="6" Width="100" Style="{StaticResource MaterialDesignRaisedAccentButton}">Button</Button>
+
+        <Button Grid.Column="5" Grid.Row="0" Width="100" Style="{StaticResource MaterialDesignRaisedButton}">Button</Button>
+        <Button Grid.Column="5" Grid.Row="1" Width="100" Style="{StaticResource MaterialDesignRaisedSecondaryButton}">Button</Button>
+        <Button Grid.Column="5" Grid.Row="2" Width="100" Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}">Button</Button>
+        <Button Grid.Column="5" Grid.Row="3" Width="100" Style="{StaticResource MaterialDesignToolButton}">Button</Button>
+        <Button Grid.Column="5" Grid.Row="4" Width="100" Style="{StaticResource MaterialDesignToolForegroundButton}">Button</Button>
+
+    </Grid>
+</Window>
