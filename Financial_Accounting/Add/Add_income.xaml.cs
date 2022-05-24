@@ -49,6 +49,32 @@ namespace Financial_Accounting
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
+            Total.Background = default;
+            CB_income_category.Background = default;
+            DatePick.Background = default;
+            bool flag = false;
+
+            if (!Total.Text.All(c => char.IsDigit(c)) || Total.Text == "")
+            {
+                Total.ToolTip = "Лише цифри";
+                Total.Background = Brushes.MistyRose;
+                flag = true;
+            }
+            if (CB_income_category.Text == default)
+            {
+                CB_income_category.Background = Brushes.MistyRose;
+                flag = true;
+            }
+            if (DatePick.Text == "")
+            {
+                DatePick.Background = Brushes.MistyRose;
+                flag = true;
+            }
+
+            if (flag)
+                return;
+
+
             DataRowView oDataRowView = CB_income_category.SelectedItem as DataRowView;
             string str = "";
 
@@ -70,6 +96,12 @@ namespace Financial_Accounting
             if (command.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Успіх!");
+                Total.Text = "";
+                CB_income_category.SelectedItem = default;
+                DatePick.SelectedDate = default;
+                Comment.Text = "";
+
+
             }
             else
                 MessageBox.Show("Щось пішло не так!");

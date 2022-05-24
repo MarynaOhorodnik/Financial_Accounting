@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="500">
     <Grid>
-        <lvc:PieChart Series="{Binding SeriesCollection}" Hoverable="True" InnerRadius="60" Margin="0"  />
+        <lvc:PieChart Series="{Binding SeriesCollection}" Hoverable="True" InnerRadius="50" Margin="0 15 0 0"  />
     </Grid>
         
 </UserControl>

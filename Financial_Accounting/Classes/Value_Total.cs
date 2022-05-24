@@ -10,6 +10,7 @@ namespace Financial_Accounting
     {
         private static double income_total = 1;
         private static double outcome_total = 1;
+        private static int id_current;
 
         public static double Income_total
         {
@@ -21,6 +22,12 @@ namespace Financial_Accounting
         {
             get { return outcome_total; }
             set { outcome_total = value; }
+        }
+
+        public static int Id_current
+        {
+            get { return id_current; }
+            set { id_current = value; }
         }
     }
 }

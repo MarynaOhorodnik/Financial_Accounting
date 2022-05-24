@@ -70,9 +70,6 @@ namespace Financial_Accounting
             this.Hide();
         }
 
-
-        
-
         private void buttonDel_In_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult resultMes = MessageBox.Show("Ви бажаєте видалити?", "Підтвердження", MessageBoxButton.YesNo);
@@ -141,11 +138,6 @@ namespace Financial_Accounting
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateMain();
-        }
-
         private void ReloadTableIN()
         {
             DB db = new DB();
@@ -153,7 +145,7 @@ namespace Financial_Accounting
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT INC.id, INC.total, INC.category_id, DATE_FORMAT(INC.date, '%d.%m.%Y') AS date , INC.comments, INC.is_delete, CTG.name FROM income AS INC, category_income AS CTG WHERE INC.category_id = CTG.id AND INC.is_delete = '0'", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT INC.id, INC.total, INC.category_id, DATE_FORMAT(INC.date, '%d.%m.%Y') AS date , INC.comments, INC.is_delete, CTG.name FROM income AS INC, category_income AS CTG WHERE INC.category_id = CTG.id AND INC.is_delete = '0' ORDER BY INC.date", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -178,7 +170,7 @@ namespace Financial_Accounting
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT INC.id, INC.total, INC.category_id, DATE_FORMAT(INC.date, '%d.%m.%Y') AS date , INC.comments, INC.is_delete, CTG.name FROM outcome AS INC, category_outcome AS CTG WHERE INC.category_id = CTG.id AND INC.is_delete = '0'", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT INC.id, INC.total, INC.category_id, DATE_FORMAT(INC.date, '%d.%m.%Y') AS date , INC.comments, INC.is_delete, CTG.name FROM outcome AS INC, category_outcome AS CTG WHERE INC.category_id = CTG.id AND INC.is_delete = '0' ORDER BY INC.date", db.getConnection());
 
 
             adapter.SelectCommand = command;
@@ -199,24 +191,33 @@ namespace Financial_Accounting
 
         private void Reload_total()
         {
+            double total_in = 0;
+            double total_out = 0;
             DB db = new DB();
 
-            DataTable table = new DataTable();
+            DataTable table1 = new DataTable();
+            DataTable table2 = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command1 = new MySqlCommand("SELECT is_delete, SUM(total) AS sum FROM income WHERE is_delete = '0' GROUP BY is_delete", db.getConnection());
 
             adapter.SelectCommand = command1;
-            adapter.Fill(table);
-            double total_in = Convert.ToDouble(table.Rows[0][1]);
+            adapter.Fill(table1);
+            if (table1.Rows.Count != 0)
+            {
+                total_in = Convert.ToDouble(table1.Rows[0][1]);
+            }
+            
 
             MySqlCommand command2 = new MySqlCommand("SELECT is_delete, SUM(total) AS sum FROM outcome WHERE is_delete = '0' GROUP BY is_delete", db.getConnection());
 
             adapter.SelectCommand = command2;
-            adapter.Fill(table);
-            double total_out = Convert.ToDouble(table.Rows[1][1]);
-
+            adapter.Fill(table2);
+            if (table2.Rows.Count != 0)
+            {
+                total_out = Convert.ToDouble(table2.Rows[0][1]);
+            }
 
             income_tot.Text = total_in.ToString() + currency;
             outcome_tot.Text = total_out.ToString() + currency;
@@ -231,6 +232,22 @@ namespace Financial_Accounting
         void Window_Closing(object sender, CancelEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void buttonEditOut_Click(object sender, RoutedEventArgs e)
+        {
+            Value_Total.Id_current = Convert.ToInt32(((Button)(sender)).Tag);
+            EditTableOutcome edit = new EditTableOutcome();
+            edit.Show();
+            this.Hide();
+        }
+
+        private void buttonEditIn_Click(object sender, RoutedEventArgs e)
+        {
+            Value_Total.Id_current = Convert.ToInt32(((Button)(sender)).Tag);
+            EditTableIncome edit = new EditTableIncome();
+            edit.Show();
+            this.Hide();
         }
     }
 }

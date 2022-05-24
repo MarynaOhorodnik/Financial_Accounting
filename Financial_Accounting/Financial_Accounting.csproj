@@ -74,35 +74,63 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Add_income.xaml.cs">
+    <Compile Include="Add\Add_income.xaml.cs">
       <DependentUpon>Add_income.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Add_outcome.xaml.cs">
+    <Compile Include="Add\Add_outcome.xaml.cs">
       <DependentUpon>Add_outcome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Category_income.xaml.cs">
+    <Compile Include="Category\Category_income.xaml.cs">
       <DependentUpon>Category_income.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Category_outcome.xaml.cs">
+    <Compile Include="Category\Category_outcome.xaml.cs">
       <DependentUpon>Category_outcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditTableIncome.xaml.cs">
+      <DependentUpon>EditTableIncome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditTableOutcome.xaml.cs">
+      <DependentUpon>EditTableOutcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditCategoryIncome.xaml.cs">
+      <DependentUpon>EditCategoryIncome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditCategoryOutcome.xaml.cs">
+      <DependentUpon>EditCategoryOutcome.xaml</DependentUpon>
     </Compile>
     <Compile Include="PieChart.xaml.cs">
       <DependentUpon>PieChart.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Value_Total.cs" />
-    <Page Include="Add_income.xaml">
+    <Compile Include="Classes\Value_Total.cs" />
+    <Page Include="Add\Add_income.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add_outcome.xaml">
+    <Page Include="Add\Add_outcome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Category_income.xaml">
+    <Page Include="Category\Category_income.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Category_outcome.xaml">
+    <Page Include="Category\Category_outcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit\EditTableIncome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit\EditTableOutcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit\EditCategoryIncome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit\EditCategoryOutcome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,7 +142,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DB.cs" />
+    <Compile Include="Classes\DB.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

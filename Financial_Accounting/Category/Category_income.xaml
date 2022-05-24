@@ -1,0 +1,69 @@
+﻿<Window x:Class="Financial_Accounting.Category_income"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Financial_Accounting"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Category_income" Height="600" Width="800" WindowState="Maximized" Closing="Window_Closing"  >
+    <Grid Background="LightGray">
+        <Border Margin="200 100 200 100" Background="White" Padding="10" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="30">
+                    <TextBlock Text="Категорії надходжень" FontSize="20" />
+                    <TextBox x:Name="Name" materialDesign:HintAssist.Hint="Назва категорії" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox x:Name="Comment" materialDesign:HintAssist.Hint="Коментар" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </StackPanel>
+
+                <Button Grid.Column="1" Grid.Row="0" Content="Зберегти" Width="200px" Margin="-30 50 0 0" Click="Button_save_Click" Style="{StaticResource MaterialDesignRaisedSecondaryButton}" />
+
+                <DockPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                    <ScrollViewer>
+                        <StackPanel Margin="30 0 30 0">
+                            <ListView x:Name="objectsListIncome">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=name}" Width="250">Категорія</GridViewColumn>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=comments}" Width="600">Коментар</GridViewColumn>
+
+                                        <GridViewColumn Header=" ">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button x:Name="buttonEdit" Content="Змінити" Padding="5" Click="buttonEdit_Click" Tag="{Binding Path=id}" Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        
+                                        <GridViewColumn Header=" ">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button x:Name="buttonDel" Content="Видалити" Padding="5" Click="buttonDel_Click" Tag="{Binding Path=id}" Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+                            <TextBlock Margin="0 20 0 0" x:Name="ResultTxtIncome" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="DimGray"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
