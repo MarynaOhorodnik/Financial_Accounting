@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Financial_Accounting"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Category_outcome" Height="600" Width="800">
+        Title="Category_outcome" Height="600" Width="800" WindowState="Maximized" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*" />

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,8 @@ namespace Financial_Accounting
 
             DB db = new DB();
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `income` (`category_id`, `date`, `comments`) VALUES ('2', '2022-05-23', '');", db.getConnection());
+            //MySqlCommand command = new MySqlCommand("INSERT INTO `income` (`category_id`, `date`, `comments`) VALUES ('2', '2022-05-23', '');", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `category_income` (`name`, `comments`, `is_delete`) VALUES (@name, @comments, '0');", db.getConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = Name.Text;
             command.Parameters.Add("@comments", MySqlDbType.VarChar).Value = Comment.Text;
 
@@ -132,5 +134,21 @@ namespace Financial_Accounting
             }
 
         }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+
+        }
+
+        //private void Window_Closed(object sender, EventArgs e)
+        //{
+        //    MainWindow mainWindow = new MainWindow();
+        //    mainWindow.Show();
+        //    this.Hide();
+        //}
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -105,6 +106,15 @@ namespace Financial_Accounting
 
             string result = year + "-" + month + "-" + day;
             return result;
+        }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+
         }
     }
 }

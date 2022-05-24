@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowState="Maximized"
-        Title="Finance Accpunting" Height="800" Width="1400" WindowStyle="ThreeDBorderWindow">
+        Title="Finance Accpunting" Height="800" Width="1400" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing">
     <Grid x:Name="MainRoot" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

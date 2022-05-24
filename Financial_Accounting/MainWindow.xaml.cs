@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using System.ComponentModel;
 
 namespace Financial_Accounting
 {
@@ -45,24 +46,28 @@ namespace Financial_Accounting
         {
             Add_income add_income = new Add_income();
             add_income.Show();
+            this.Hide();
         }
 
         private void Button_outcome_Click(object sender, RoutedEventArgs e)
         {
             Add_outcome add_outcome = new Add_outcome();
             add_outcome.Show();
+            this.Hide();
         }
 
         private void Button_ctg_income_Click(object sender, RoutedEventArgs e)
         {
             Category_income category_income = new Category_income();
             category_income.Show();
+            this.Hide();
         }
 
         private void Button_ctg_outcome_Click(object sender, RoutedEventArgs e)
         {
             Category_outcome category_outcome = new Category_outcome();
             category_outcome.Show();
+            this.Hide();
         }
 
 
@@ -223,5 +228,9 @@ namespace Financial_Accounting
             ContControl.DataContext = new PieChart();
         }
 
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

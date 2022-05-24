@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Financial_Accounting"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Add_outcome" Height="450" Width="800">
+        Title="Add_outcome" Height="450" Width="800" WindowState="Maximized" Closing="Window_Closing">
     <Grid>
         <StackPanel Margin="50">
             <TextBlock Text="Нові витрати" FontSize="20" />
