@@ -88,7 +88,7 @@ namespace Financial_Accounting
 
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Успіх!");
+                        //MessageBox.Show("Успіх!");
                         UpdateMain();
                     }
 
@@ -122,7 +122,7 @@ namespace Financial_Accounting
 
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Успіх!");
+                        //MessageBox.Show("Успіх!");
                         UpdateMain();
                     }
 
@@ -221,17 +221,12 @@ namespace Financial_Accounting
 
             income_tot.Text = total_in.ToString() + currency;
             outcome_tot.Text = total_out.ToString() + currency;
-            balance_tot.Text = (total_in - total_out).ToString() + currency;
+            balance_tot.Text = (total_in + total_out).ToString() + currency;
 
             Value_Total.Income_total = total_in;
-            Value_Total.Outcome_total = total_out;
+            Value_Total.Outcome_total = total_out - 2 * total_out;
 
             ContControl.DataContext = new PieChart();
-        }
-
-        void Window_Closing(object sender, CancelEventArgs e)
-        {
-            Environment.Exit(0);
         }
 
         private void buttonEditOut_Click(object sender, RoutedEventArgs e)
@@ -248,6 +243,11 @@ namespace Financial_Accounting
             EditTableIncome edit = new EditTableIncome();
             edit.Show();
             this.Hide();
+        }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

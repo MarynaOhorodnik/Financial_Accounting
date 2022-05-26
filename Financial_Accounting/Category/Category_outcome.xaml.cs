@@ -56,6 +56,7 @@ namespace Financial_Accounting
 
         private void Button_save_Click(object sender, RoutedEventArgs e)
         {
+            Name.Background = default;
             if (isCategoryExists())
                 return;
             if (Name.Text == "")
@@ -74,7 +75,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
+                //MessageBox.Show("Успіх!");
                 ReloadTable();
                 Name.Text = "";
                 Comment.Text = "";
@@ -127,7 +128,7 @@ namespace Financial_Accounting
 
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Успіх!");
+                        //MessageBox.Show("Успіх!");
                         ReloadTable();
                     }
                     else

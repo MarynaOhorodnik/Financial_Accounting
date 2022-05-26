@@ -118,8 +118,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
-
+                //MessageBox.Show("Успіх!");
             }
             else
                 MessageBox.Show("Щось пішло не так!");
@@ -147,7 +146,7 @@ namespace Financial_Accounting
                     return i;
                 }
             }
-            return 0;
+            return -1;
         }
 
         private int Find_Id(string str)

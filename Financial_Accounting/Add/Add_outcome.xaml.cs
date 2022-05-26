@@ -76,6 +76,8 @@ namespace Financial_Accounting
 
             DataRowView oDataRowView = CB_outcome_category.SelectedItem as DataRowView;
             string str = "";
+            double total = Convert.ToDouble(Total.Text);
+            total = total - 2 * total;
 
             if (oDataRowView != null)
             {
@@ -85,7 +87,7 @@ namespace Financial_Accounting
             DB db = new DB();
 
             MySqlCommand command = new MySqlCommand("INSERT INTO `outcome` (`total`, `category_id`, `date`, `comments`, `is_delete`) VALUES (@total, @ctg, @date, @com, '0');", db.getConnection());
-            command.Parameters.Add("@total", MySqlDbType.Double).Value = Total.Text;
+            command.Parameters.Add("@total", MySqlDbType.Double).Value = total.ToString();
             command.Parameters.Add("@ctg", MySqlDbType.Int32).Value = Find_Id(str);
             command.Parameters.Add("@date", MySqlDbType.Date).Value = DateFormat(DatePick.ToString());
             command.Parameters.Add("@com", MySqlDbType.VarChar).Value = Comment.Text;
@@ -94,7 +96,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
+                //MessageBox.Show("Успіх!");
                 Total.Text = "";
                 CB_outcome_category.SelectedItem = default;
                 DatePick.SelectedDate = default;

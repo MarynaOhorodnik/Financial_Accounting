@@ -56,6 +56,7 @@ namespace Financial_Accounting
 
         private void Button_save_Click(object sender, RoutedEventArgs e)
         {
+            Name.Background = default;
             if (isCategoryExists())
                 return;
             if (Name.Text == "")
@@ -66,7 +67,6 @@ namespace Financial_Accounting
 
             DB db = new DB();
 
-            //MySqlCommand command = new MySqlCommand("INSERT INTO `income` (`category_id`, `date`, `comments`) VALUES ('2', '2022-05-23', '');", db.getConnection());
             MySqlCommand command = new MySqlCommand("INSERT INTO `category_income` (`name`, `comments`, `is_delete`) VALUES (@name, @comments, '0');", db.getConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = Name.Text;
             command.Parameters.Add("@comments", MySqlDbType.VarChar).Value = Comment.Text;
@@ -75,7 +75,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
+                //MessageBox.Show("Успіх!");
                 ReloadTable();
                 Name.Text = "";
                 Comment.Text = "";
@@ -86,7 +86,7 @@ namespace Financial_Accounting
             db.closeConnection();
         }
 
-        public Boolean isCategoryExists()
+        public bool isCategoryExists()
         {
             DB db = new DB();
 
@@ -128,7 +128,7 @@ namespace Financial_Accounting
 
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Успіх!");
+                        //MessageBox.Show("Успіх!");
                         ReloadTable();
                     }
                     else

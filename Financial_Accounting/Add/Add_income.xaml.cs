@@ -95,7 +95,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
+                //MessageBox.Show("Успіх!");
                 Total.Text = "";
                 CB_income_category.SelectedItem = default;
                 DatePick.SelectedDate = default;

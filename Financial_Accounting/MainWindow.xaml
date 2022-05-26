@@ -83,7 +83,7 @@
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=total}">Сума</GridViewColumn>
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Категорія</GridViewColumn>
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=date}">Дата</GridViewColumn>
-                                        <GridViewColumn Width="170" DisplayMemberBinding="{Binding Path=comments}">Коментар</GridViewColumn>
+                                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=comments}">Коментар</GridViewColumn>
 
                                         <GridViewColumn Header=" ">
                                             <GridViewColumn.CellTemplate>
@@ -121,7 +121,7 @@
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=total}">Сума</GridViewColumn>
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Категорія</GridViewColumn>
                                         <GridViewColumn DisplayMemberBinding="{Binding Path=date}">Дата</GridViewColumn>
-                                        <GridViewColumn Width="170" DisplayMemberBinding="{Binding Path=comments}">Коментар</GridViewColumn>
+                                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=comments}">Коментар</GridViewColumn>
 
                                         <GridViewColumn Header=" ">
                                             <GridViewColumn.CellTemplate>

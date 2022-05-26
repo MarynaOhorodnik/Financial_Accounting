@@ -62,7 +62,7 @@ namespace Financial_Accounting
             adapter.Fill(table);
 
 
-            Total.Text = table.Rows[0][1].ToString();
+            Total.Text = table.Rows[0][1].ToString().Substring(1);
             CB_outcome_category.SelectedIndex = IndexComboBox(table.Rows[0][3].ToString());
             DatePick.SelectedDate = Convert.ToDateTime(table.Rows[0][4].ToString());
             Comment.Text = table.Rows[0][5].ToString();
@@ -99,6 +99,8 @@ namespace Financial_Accounting
 
             DataRowView oDataRowView = CB_outcome_category.SelectedItem as DataRowView;
             string str = "";
+            double total = Convert.ToDouble(Total.Text);
+            total = total - 2 * total;
 
             if (oDataRowView != null)
             {
@@ -109,7 +111,7 @@ namespace Financial_Accounting
 
             MySqlCommand command = new MySqlCommand("UPDATE `outcome` SET `total` = @total, `category_id` = @ctg, `date` = @date, `comments` = @com WHERE `outcome`.`id` = @id;", db.getConnection());
             command.Parameters.Add("@id", MySqlDbType.VarChar).Value = Value_Total.Id_current;
-            command.Parameters.Add("@total", MySqlDbType.Double).Value = Total.Text;
+            command.Parameters.Add("@total", MySqlDbType.Double).Value = total.ToString();
             command.Parameters.Add("@ctg", MySqlDbType.Int32).Value = Find_Id(str);
             command.Parameters.Add("@date", MySqlDbType.Date).Value = DateFormat(DatePick.ToString());
             command.Parameters.Add("@com", MySqlDbType.VarChar).Value = Comment.Text;
@@ -118,8 +120,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
-
+                //MessageBox.Show("Успіх!");
             }
             else
                 MessageBox.Show("Щось пішло не так!");
@@ -147,7 +148,7 @@ namespace Financial_Accounting
                     return i;
                 }
             }
-            return 0;
+            return -1;
         }
 
         private int Find_Id(string str)

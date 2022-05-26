@@ -51,16 +51,6 @@ namespace Financial_Accounting
 
         }
 
-
-        void Window_Closing(object sender, CancelEventArgs e)
-        {
-            e.Cancel = true;
-            Category_income income = new Category_income();
-            income.Show();
-            this.Hide();
-
-        }
-
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
             Name.Background = default;
@@ -83,7 +73,7 @@ namespace Financial_Accounting
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Успіх!");
+                //MessageBox.Show("Успіх!");
             }
             else
                 MessageBox.Show("Щось пішло не так! Спробуйте ще раз.");
@@ -91,7 +81,7 @@ namespace Financial_Accounting
             db.closeConnection();
         }
 
-        public Boolean isCategoryExists()
+        public bool isCategoryExists()
         {
             DB db = new DB();
 
@@ -114,6 +104,15 @@ namespace Financial_Accounting
             }
             else
                 return false;
+        }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Category_income income = new Category_income();
+            income.Show();
+            this.Hide();
+
         }
     }
 }

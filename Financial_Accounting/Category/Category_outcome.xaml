@@ -29,7 +29,7 @@
                     <TextBox x:Name="Comment" materialDesign:HintAssist.Hint="Коментар" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
                 </StackPanel>
-                <Button Grid.Column="1" Grid.Row="0" Content="Зберегти" Width="100px" Margin="0 60 0 0" Click="Button_save_Click" Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}" />
+                <Button Grid.Column="1" Grid.Row="0" Content="Зберегти" Width="200px" Margin="-30 50 0 0" Click="Button_save_Click" Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}" />
 
                 <DockPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
                     <ScrollViewer CanContentScroll="False">
@@ -43,7 +43,7 @@
                                         <GridViewColumn Header=" ">
                                             <GridViewColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Button x:Name="buttonEdit" Content="Змінити" Padding="5" Click="buttonEdit_Click" Tag="{Binding Path=id}" Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" />
+                                                    <Button x:Name="buttonEdit" Content="Змінити" Padding="5" Click="buttonEdit_Click" Tag="{Binding Path=id}" Style="{StaticResource MaterialDesignFlatDarkButton}" />
                                                 </DataTemplate>
                                             </GridViewColumn.CellTemplate>
                                         </GridViewColumn>
